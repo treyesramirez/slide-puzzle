@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+# Slide Puzzle 🧩
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Juego de puzzle deslizante construido con **React + TypeScript + Zustand**, 
+desarrollado como proyecto de aprendizaje para dominar manejo de estado en React.
 
-Currently, two official plugins are available:
+## 🎯 Objetivo del proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Aprender a usar **Zustand** para manejo de estado global en aplicaciones React,
+implementando un juego completo desde cero: lógica pura, UI, estado global,
+persistencia, testing y deploy.
 
-## React Compiler
+## 🚀 Demo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+_(pendiente — se agregará el link una vez desplegado)_
 
-## Expanding the ESLint configuration
+## 🛠️ Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React + TypeScript
+- Vite
+- Zustand (manejo de estado)
+- Vitest (testing)
+- ESLint + Prettier
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## ✅ Checklist de desarrollo
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Fase 0 — Setup
+- [x] Proyecto inicializado con Vite
+- [x] ESLint + Prettier configurados
+- [x] Repositorio en GitHub
+- [x] Estructura de carpetas definida
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Fase 1 — Lógica pura del puzzle
+- [ ] Funciones puras del juego (`generateSolvedBoard`, `shuffleBoard`, `isSolved`, `move`)
+- [ ] Tests unitarios con Vitest
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Fase 2 — UI con estado local
+- [ ] Componentes `Board` y `Tile`
+- [ ] Movimiento de fichas funcional
+- [ ] Contador de movimientos y cronómetro
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Fase 3 — Migración a Zustand
+- [ ] Store de Zustand (`usePuzzleStore`)
+- [ ] UI conectada al store, sin prop drilling
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Fase 4 — Features con estado global
+- [ ] Selector de dificultad (3x3, 4x4, 5x5)
+- [ ] Persistencia de mejores tiempos (`localStorage`)
+- [ ] Modo oscuro/claro
+- [ ] Undo de movimientos
+
+### Fase 5 — Pulido
+- [ ] Animaciones de transición
+- [ ] Soporte de teclado
+- [ ] Diseño responsive
+
+### Fase 6 — Testing y calidad
+- [ ] Tests del store
+- [ ] Revisión de performance/renders
+
+### Fase 7 — Deploy y portafolio
+- [ ] Deploy en Vercel/Netlify
+- [ ] README final con screenshots
+
+## 📖 Aprendizajes
+
+_(se irá completando a medida que avance el proyecto)_
