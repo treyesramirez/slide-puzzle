@@ -61,6 +61,18 @@ _(pendiente — se agregará el link una vez desplegado)_
 - [ ] Deploy en Vercel/Netlify
 - [ ] README final con screenshots
 
-## 📖 Aprendizajes
+## 📖 Learned
 
-_(se irá completando a medida que avance el proyecto)_
+This approach consider that the Board Game is a square board.
+
+If needed in the future, the interface definition can be changed to:
+
+```ts
+export interface Board {
+  tiles: number[]
+  rows: number
+  cols: number
+}
+```
+
+Then `getMovableIndices` / `move` / `isSolved` would receive `rows` / `cols` as parameters instead of inferring them using `sqrt`.
