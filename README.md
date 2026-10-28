@@ -30,16 +30,16 @@ _(pendiente — se agregará el link una vez desplegado)_
 - [x] Estructura de carpetas definida
 
 ### Fase 1 — Lógica pura del puzzle
-- [ ] Funciones puras del juego (`generateSolvedBoard`, `shuffleBoard`, `isSolved`, `move`)
-- [ ] Tests unitarios con Vitest
+- [x] Funciones puras del juego (`generateSolvedBoard`, `shuffleBoard`, `isSolved`, `move`)
+- [x] Tests unitarios con Vitest
 
 ### Fase 2 — UI con estado local
-- [ ] Componentes `Board` y `Tile`
-- [ ] Movimiento de fichas funcional
-- [ ] Contador de movimientos y cronómetro
+- [x] Componentes `Board` y `Tile`
+- [x] Movimiento de fichas funcional
+- [x] Contador de movimientos y cronómetro
 
 ### Fase 3 — Migración a Zustand
-- [ ] Store de Zustand (`usePuzzleStore`)
+- [x] Store de Zustand (`usePuzzleStore`)
 - [ ] UI conectada al store, sin prop drilling
 
 ### Fase 4 — Features con estado global
