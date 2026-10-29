@@ -1,13 +1,11 @@
-import type { Board as BoardType } from '../types'
+import { selectIsSolved, usePuzzleStore } from '../store/usePuzzleStore'
 import { getMovableIndices } from '../utils/puzzle'
 import Tile from './Tile'
 
-interface BoardProps {
-  board: BoardType
-  onTileClick: (tileIndex: number) => void
-}
-
-function Board({ board, onTileClick }: BoardProps) {
+function Board() {
+  const board = usePuzzleStore((state) => state.board)
+  const moveTile = usePuzzleStore((state) => state.moveTile)
+  const isSolved = usePuzzleStore(selectIsSolved)
   const size = Math.sqrt(board.length)
   const movableIndices = getMovableIndices(board)
 
@@ -20,8 +18,8 @@ function Board({ board, onTileClick }: BoardProps) {
         <Tile
           key={index}
           value={tileValue}
-          isMovable={movableIndices.includes(index)}
-          onClick={() => onTileClick(index)}
+          isMovable={!isSolved && movableIndices.includes(index)}
+          onClick={() => moveTile(index)}
         />
       ))}
     </div>

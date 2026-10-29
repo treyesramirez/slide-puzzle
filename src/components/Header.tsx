@@ -1,8 +1,4 @@
-interface HeaderProps {
-  moves: number
-  elapsedSeconds: number
-  isSolved: boolean
-}
+import { selectIsSolved, usePuzzleStore } from '../store/usePuzzleStore'
 
 function formatTime(totalSeconds: number): string {
   const minutes = Math.floor(totalSeconds / 60)
@@ -10,7 +6,11 @@ function formatTime(totalSeconds: number): string {
   return `${minutes}:${seconds.toString().padStart(2, '0')}`
 }
 
-function Header({ moves, elapsedSeconds, isSolved }: HeaderProps) {
+function Header() {
+  const moves = usePuzzleStore((state) => state.moves)
+  const elapsedSeconds = usePuzzleStore((state) => state.elapsedSeconds)
+  const isSolved = usePuzzleStore(selectIsSolved)
+
   return (
     <div className="flex gap-6 text-lg">
       <span>Moves: {moves}</span>

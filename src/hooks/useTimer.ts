@@ -1,28 +1,20 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect } from 'react'
+import { usePuzzleStore } from '../store/usePuzzleStore'
 
 /**
  * Custom hook that tracks elapsed seconds while `isRunning` is true.
  * Stops automatically (via cleanup) when isRunning becomes false or the component unmounts.
  */
 export function useTimer(isRunning: boolean) {
-  const [elapsedSeconds, setElapsedSeconds] = useState(0)
-  const intervalRef = useRef<number | null>(null)
+  const tick = usePuzzleStore((state) => state.tick)
 
   useEffect(() => {
-    if (isRunning) {
-      intervalRef.current = window.setInterval(() => {
-        setElapsedSeconds((prev) => prev + 1)
-      }, 1000)
-    }
+    if (!isRunning) return
 
-    return () => {
-      if (intervalRef.current !== null) {
-        window.clearInterval(intervalRef.current)
-      }
-    }
-  }, [isRunning])
+    const id = window.setInterval(() => {
+      tick()
+    }, 1000)
 
-  const reset = () => setElapsedSeconds(0)
-
-  return { elapsedSeconds, reset }
+    return () => window.clearInterval(id)
+  }, [isRunning, tick])
 }

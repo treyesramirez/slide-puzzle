@@ -23,11 +23,13 @@ export const usePuzzleStore = create<PuzzleState>((set, get) => ({
 
   moveTile: (tileIndex) => {
     const currentBoard = get().board
-    
+
     if (checkIsSolved(currentBoard)) return
-    
+
     const newBoard = move(currentBoard, tileIndex)
-    
+
+    // This condition ensures that we only update the state if the move
+    // was valid and resulted in a new board configuration.
     if (newBoard !== currentBoard) {
       set((state) => ({
         board: newBoard,

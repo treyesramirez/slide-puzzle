@@ -1,11 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import {
-  generateSolvedBoard,
-  isSolved,
-  getMovableIndices,
-  move,
-  shuffleBoard,
-} from './puzzle'
+import { generateSolvedBoard, isSolved, getMovableIndices, move, shuffleBoard } from './puzzle'
 
 describe('generateSolvedBoard', () => {
   it('genera un tablero 3x3 resuelto', () => {
