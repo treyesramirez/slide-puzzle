@@ -3,15 +3,20 @@
 Juego de puzzle deslizante construido con **React + TypeScript + Zustand**,
 desarrollado como proyecto de aprendizaje para dominar manejo de estado en React.
 
+## 🚀 Demo
+
+[![Deploy](https://github.com/treyesramirez/slide-puzzle/actions/workflows/deploy.yml/badge.svg)](https://github.com/treyesramirez/slide-puzzle/actions/workflows/deploy.yml)
+
+**👉 [Jugar en vivo](https://treyesramirez.github.io/slide-puzzle/)**
+
+<!-- Add a screenshot or GIF here once Phase 5 is done -->
+<!-- ![Slide Puzzle gameplay](docs/demo.gif) -->
+
 ## 🎯 Objetivo del proyecto
 
 Aprender a usar **Zustand** para manejo de estado global en aplicaciones React,
 implementando un juego completo desde cero: lógica pura, UI, estado global,
 persistencia, testing y deploy.
-
-## 🚀 Demo
-
-_(pendiente — se agregará el link una vez desplegado)_
 
 ## 🛠️ Stack
 
